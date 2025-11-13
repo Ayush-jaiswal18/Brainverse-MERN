@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
-@theme {
+@theme { 
+  /* Button colors */
   --color-brandPurple-600: #5046e4;
   --color-brandPurple-500: #3e38a7;
   --color-brandPurple-300: #e0e7fe;
+  /* card colors */
+  --color-brandGray-100: #d9ddee;
+  --color-brandGray-200: #9492db;
+  --color-brandGray-600: #7164c0;
+  
 }
