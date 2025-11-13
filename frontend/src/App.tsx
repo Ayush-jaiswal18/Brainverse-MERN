@@ -2,13 +2,21 @@ import { Button } from "./components/ui/Button";
 import { PlusIcon } from "./icons/PlusIcon";
 import { ShareIcon } from "./icons/ShareIcon";
 import { Card } from './components/ui/Card'
+import { CreateContentModel } from "./components/ui/CreateContentModel";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="p-4 space-x-4">
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return <div className="p-4 space-x-4">
+      <CreateContentModel open={modalOpen} onClose={() => {
+        setModalOpen(false);
+      }}/>
       <div className="flex justify-end gap-4">
-      <Button startIcon={<PlusIcon size="lg" />} size="md" variant="primary" text="Add content" />
-      <Button endIcon={<ShareIcon size="md" />} size="md" variant="secondary" text="Share Brain" />
+      <Button onClick={() => {
+        setModalOpen(true)
+      }} variant="primary" startIcon={<PlusIcon size="lg" />} size="md"  text="Add content" />
+      <Button variant="secondary" endIcon={<ShareIcon size="md" />} size="md"  text="Share Brain" />
       </div>
 
       <div className="flex gap-4">
@@ -16,7 +24,6 @@ function App() {
         <Card type="youtube" link="https://youtu.be/3j8JLXDRf1c?si=gl9Okx7QoTZnvSLY" title="First video" />
       </div>
     </div>
-  );
 }
 
 export default App;
