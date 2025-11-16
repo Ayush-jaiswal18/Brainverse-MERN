@@ -8,6 +8,8 @@ interface ButtonProps {
   startIcon?: ReactElement;
   endIcon?: ReactElement;
   onClick?: () => void;
+  fullWidth?: boolean;
+  loading?: boolean;
 }
 
 const variantStyles = {
@@ -25,6 +27,7 @@ const sizeStyles = {
 const defaultStyles = "rounded-md flex items-center justify-center font-light hover:opacity-90 transition-all duration-200 border border-transparent hover:border-gray-400"
 
 export const Button = (props: ButtonProps) => {
-  return <button onClick={props.onClick} className={` ${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}`}>{props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null } {props.text} {props.endIcon ? <div className="pl-2">{props.endIcon}</div> : null}</button>;
+
+  return <button onClick={props.onClick} className={` ${variantStyles[props.variant]} ${props.fullWidth ? "w-full" : " "} ${defaultStyles} ${sizeStyles[props.size]} ${props.loading ? "opacity-70 cursor-not-allowed" : ""}`}> {props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null } {props.text} {props.endIcon ? <div className="pl-2">{props.endIcon}</div> : null}</button>;
 };
 

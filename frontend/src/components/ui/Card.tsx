@@ -19,7 +19,6 @@ export function Card({ title, link, type }: CardProps) {
                     </div>
                     <div className="flex items-center">
                         <div className="pr-2 text-gray-500">
-                            {/* ✅ Added rel="noopener noreferrer" for security when using target="_blank" */}
                             <a href={link} target="_blank" rel="noopener noreferrer">
                                 <ShareIcon size="md" />
                             </a>

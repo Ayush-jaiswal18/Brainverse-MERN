@@ -1,5 +1,6 @@
 import { CrossIcon } from "../../icons/CrossIcon";
 import { Button } from "./Button";
+import { Input } from "./Input";
 
 // Controlled component
 export function CreateContentModel({ open, onClose }) {
@@ -7,7 +8,7 @@ export function CreateContentModel({ open, onClose }) {
     <div>
       {open && (
         <div className="w-screen h-screen fixed top-0 left-0 bg-black/18 backdrop-blur-md flex items-center justify-center">
-          <div className="bg-white opacity-100 p-4 rounded-xl w-[350px]">
+          <div className="bg-white opacity-100 p-4 rounded-xl w-[350px] ">
             
             <div className="flex justify-end mb-2">
               <div onClick={onClose} className="cursor-pointer hover:border rounded">
@@ -31,14 +32,3 @@ export function CreateContentModel({ open, onClose }) {
   );
 }
 
-function Input({ placeholder }) {
-  return (
-    <div>
-      <input
-        placeholder={placeholder}
-        type="text"
-        className="px-4 py-2 my-2 w-full rounded-lg border border-gray-300 focus:border-black focus:ring-1 focus:ring-black transition"
-      />
-    </div>
-  );
-}
